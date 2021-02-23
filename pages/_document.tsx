@@ -1,5 +1,6 @@
 import React from 'react';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
+import AdSense from 'react-adsense';
 
 declare module 'react' {
   interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
@@ -36,6 +37,19 @@ class Document extends NextDocument<Props> {
 					/>
 				</Head>
 				<body>
+					<script
+						style={{ textAlign: 'center' }}
+						type="text/javascript"
+						dangerouslySetInnerHTML={{
+							__html: `
+								google_ad_client = "ca-pub-3545276391244796";
+								/* ビッグバナー */
+								google_ad_slot = "8206154912";
+								google_ad_width = 728;
+								google_ad_height = 90;
+							`}}
+					/>
+					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js" />
 					<Main />
 					<NextScript />
 				</body>
